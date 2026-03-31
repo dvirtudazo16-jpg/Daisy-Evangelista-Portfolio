@@ -6,9 +6,31 @@
   <title>Daisy Evangelista | Virtual Assistant</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+    
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+</style>
 </head>
 
 <body class="bg-[#1f2a44] text-white">
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+  <div class="absolute w-[500px] h-[500px] bg-yellow-400 opacity-20 blur-[120px] top-[-100px] left-[-100px] animate-pulse"></div>
+  <div class="absolute w-[400px] h-[400px] bg-blue-500 opacity-20 blur-[120px] bottom-[-100px] right-[-100px] animate-pulse"></div>
+</div>
 
 <header class="flex justify-between items-center p-4 md:px-10">
   
@@ -68,7 +90,7 @@
     </div>
   </div>
 
-  <img src="profile.png" class="w-4/5 max-w-sm mt-8 md:mt-0 rounded-2xl shadow-xl">
+  <img src="profile.png" class="w-4/5 max-w-sm mt-8 md:mt-0 rounded-2xl shadow-xl fade-up delay-2">
 </section>
 
 
@@ -77,22 +99,22 @@
 
   <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
 
-    <div class="bg-white/5 p-4 rounded-xl">
+    <div class="bg-white/5 p-4 rounded-xl fade-up delay-1">
       <h3 class="text-yellow-400 font-semibold mb-2">Administrative</h3>
       <p class="text-sm">Email & calendar management, data entry, organization</p>
     </div>
 
-    <div class="bg-white/5 p-4 rounded-xl">
+    <div class="bg-white/5 p-4 rounded-xl fade-up delay-2">
       <h3 class="text-yellow-400 font-semibold mb-2">Social Media</h3>
       <p class="text-sm">Content scheduling, inbox management</p>
     </div>
 
-    <div class="bg-white/5 p-4 rounded-xl">
+    <div class="bg-white/5 p-4 rounded-xl fade-up delay-3">
       <h3 class="text-yellow-400 font-semibold mb-2">Customer Support</h3>
       <p class="text-sm">Handling inquiries and CRM updates</p>
     </div>
 
-    <div class="bg-white/5 p-4 rounded-xl">
+   <div class="bg-white/5 p-4 rounded-xl fade-up delay-4">
       <h3 class="text-yellow-400 font-semibold mb-2">Business Support</h3>
       <p class="text-sm">Research, coordination, and task management</p>
     </div>
@@ -106,17 +128,17 @@
 
   <div class="flex flex-col gap-6 md:flex-row md:justify-center">
 
-    <div class="max-w-xs">
+  <div class="max-w-xs fade-up delay-1">
       <h3 class="font-semibold mb-2">Efficient</h3>
       <p class="text-sm">I complete tasks quickly without sacrificing quality.</p>
     </div>
 
-    <div class="max-w-xs">
+   <div class="max-w-xs fade-up delay-2">
       <h3 class="font-semibold mb-2">Organized</h3>
       <p class="text-sm">I create systems that keep your business running smoothly.</p>
     </div>
 
-    <div class="max-w-xs">
+    <div class="max-w-xs fade-up delay-3">
       <h3 class="font-semibold mb-2">Reliable</h3>
       <p class="text-sm">You can count on consistent, professional support.</p>
     </div>
@@ -125,7 +147,7 @@
 </section>
 
 <section class="px-5 py-10">
-  <div class="bg-yellow-400 text-black rounded-2xl text-center p-6 md:p-10">
+ <div class="bg-yellow-400 text-black rounded-2xl text-center p-6 md:p-10 fade-up">
     <h2 class="text-xl md:text-2xl font-bold mb-4">
       Ready to simplify your workload?
     </h2>
@@ -151,5 +173,21 @@
   });
 </script>
 
+  <script>
+  const elements = document.querySelectorAll('.fade-up');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+  
 </body>
 </html>
