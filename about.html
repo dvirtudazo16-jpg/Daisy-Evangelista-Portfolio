@@ -5,11 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Daisy Evangelista</title>
   <script src="https://cdn.tailwindcss.com"></script>
+ <style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+   .fade-in-up {
+  animation: fadeInUp 1s ease-out;
+     will-change: transform, opacity;
+}
+  
+  </style>
+  
 </head>
 
 <body class="bg-[#F5F1EB] text-[#2E2E3A]">
 
-
+<section class="fade-in-up bg-[#F5F1EB] text-[#2E2E3A] py-20 px-6 md:px-16">
   <header class="flex justify-between items-center p-4 md:px-10 bg-white shadow-sm">
     <a href="index.html" class="font-bold text-lg">Daisy</a>
 
@@ -34,7 +53,7 @@
         <div class="absolute inset-0 rounded-[2.5rem] border border-[#C8A97E]/50 scale-105"></div>
 
    
-        <img src="profile.png"
+        <img src="about.png"
              alt="Daisy Evangelista"
              class="w-full rounded-[2.5rem] object-cover shadow-[0_20px_60px_rgba(0,0,0,0.15)] relative z-10 transform group-hover:scale-[1.03] transition duration-500">
 
