@@ -32,10 +32,13 @@
   opacity: 1;
   transform: translateY(0);
 }
-    * {
-  outline: 1px solid red;
-}
-    
+    #home div {
+      pointer-events: none;
+    }
+
+    #home {
+      display: none;
+    }
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
@@ -45,7 +48,8 @@
 
 <body class="bg-[#1f2a44] text-white">
  
-<header class="bg-[#1e2b45] text-white relative z-50">
+<header class="bg-[#1e2b45] text-white fixed top-0 left-0 w-full z-[9999] shadow-lg">
+  
   <div class="flex justify-between items-center px-5 py-4">
 
     <div class="text-lg font-bold">Daisy</div>
@@ -81,7 +85,7 @@
 </header>
 
 
-<section id="home" class="relative bg-gradient-to-r from-[#1f2a44] via-[#2d3756] to-[#F5F1EB] py-20 md:py-28 px-6 md:px-16 overflow-hidden">
+<section id="home" class="mt-20 relative bg-gradient-to-r from-[#1f2a44] via-[#2d3756] to-[#F5F1EB] py-20 md:py-28 px-6 md:px-16 overflow-hidden">
 <div class="absolute top-0 left-0 w-[400px] h-[400px] bg-[#C8A97E]/20 blur-[120px] rounded-full"></div>
 <div class="absolute bottom-0 right-0 w-[300px] h-[300px] bg-white/10 blur-[100px] rounded-full"></div>
  <div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-10">
