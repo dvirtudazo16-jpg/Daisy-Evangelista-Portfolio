@@ -17,6 +17,17 @@
     html {
   scroll-behavior: smooth;
 }
+    #mobileMenu a {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+#mobileMenu.max-h-\[400px\] a {
+  opacity: 1;
+  transform: translateY(0);
+}
+    
 .fade-up.show {
   opacity: 1;
   transform: translateY(0);
@@ -66,7 +77,6 @@
   </div>
 </header>
 
-<div id="mobileMenu" class="hidden flex-col bg-[#1f2a44] px-6 pb-6 space-y-4 md:hidden">
    <a href="#home" class="hover:text-yellow-400">Home</a>
 <a href="/about.html">About</a>
 <a href="#services" class="hover:text-yellow-400">Services</a>
@@ -220,7 +230,8 @@
   const mobileMenu = document.getElementById("mobileMenu");
 
   menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+     menu.classList.toggle("max-h-0");
+    menu.classList.toggle("max-h-[400px]");
   });
 </script>
 
