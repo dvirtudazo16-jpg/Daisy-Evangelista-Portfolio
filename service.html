@@ -23,20 +23,41 @@ body {
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 20px;
-  color: #f4c27a;
+  font-weight: 600;
+  font-size: 22px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
 }
 
 .nav-links a {
   margin-left: 30px;
   text-decoration: none;
   color: white;
+  position: relative;
   transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #f4c27a;
+/* UNDERLINE EFFECT */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #f4c27a;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 
@@ -78,12 +99,14 @@ body {
   border-radius: 14px;
   transition: 0.3s;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 1px solid transparent;
 }
 
 .card:hover {
   transform: translateY(-8px);
   background: rgba(255,255,255,0.08);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  border: 1px solid #f4c27a;
+  box-shadow: 0 15px 35px rgba(244,194,122,0.2);
 }
 
 .card h3 {
@@ -103,8 +126,8 @@ body {
   height: 350px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid #f4c27a;
-  position: relative;
+  border: 2px solid #f4c27a;
+  box-shadow: 0 0 40px rgba(244,194,122,0.15);
 }
 
 .image-box img {
@@ -147,16 +170,18 @@ body {
 .cta a {
   background: #f4c27a;
   color: #1f2a44;
-  padding: 14px 32px;
+  padding: 14px 36px;
   border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: 0.5px;
   transition: 0.3s;
+  box-shadow: 0 10px 20px rgba(244,194,122,0.3);
 }
 
 .cta a:hover {
   background: #ffcf8a;
-  transform: scale(1.05);
+  transform: translateY(-2px);
 }
 
 /* MOBILE */
@@ -183,6 +208,9 @@ body {
     width: 250px;
     height: 250px;
   }
+  body {
+  background: linear-gradient(135deg, #1f2a44, #2a3555);
+}
 }
 </style>
 </head>
@@ -191,7 +219,7 @@ body {
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <div class="logo">Daisy Evangelista</div>
+  <div class="logo">Daisy</div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -248,7 +276,7 @@ body {
 
   <div class="right">
     <div class="image-box">
-      <img src="images/your-photo.jpg" alt="Daisy">
+      <img src="service.png" alt="Daisy">
     </div>
   </div>
 
