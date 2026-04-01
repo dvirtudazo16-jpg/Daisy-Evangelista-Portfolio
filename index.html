@@ -31,25 +31,39 @@
 
 <body class="bg-[#1f2a44] text-white">
  
-<header class="flex justify-between items-center p-4 md:px-10">
-  
-  <div class="font-bold text-lg">Daisy</div>
+<header class="bg-[#1e2b45] text-white">
+  <div class="flex justify-between items-center px-5 py-4">
 
-  <nav class="hidden md:flex gap-6 text-sm">
- <a href="#home" class="hover:text-yellow-400">Home</a>
-<a href="./about.html">About</a>
-<a href="#services" class="hover:text-yellow-400">Services</a>
-<a href="#portfolio" class="hover:text-yellow-400">Portfolio</a>
-<a href="#contact" class="hover:text-yellow-400">Contact</a>
-  </nav>
+    <div class="text-lg font-bold">Daisy</div>
 
-  <button class="hidden md:block bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold">
-    Hire Me
-  </button>
+    <button id="menuBtn" class="text-2xl md:hidden">
+      ☰
+    </button>
 
-  <button id="menuBtn" class="md:hidden text-2xl">
-    ☰
-  </button>
+    <nav class="hidden md:flex gap-6 items-center">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Portfolio</a>
+      <a href="#">Contact</a>
+      <a href="#" class="bg-yellow-400 text-black px-4 py-2 rounded-full">
+        Hire Me
+      </a>
+    </nav>
+  </div>
+
+  <div id="mobileMenu"
+       class="max-h-0 overflow-hidden flex flex-col items-center gap-5 bg-[#1e2b45] transition-all duration-500 md:hidden">
+
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Portfolio</a>
+    <a href="#">Contact</a>
+    <a href="#" class="bg-yellow-400 text-black px-5 py-2 rounded-full">
+      Hire Me
+    </a>
+  </div>
 </header>
 
 <div id="mobileMenu" class="hidden flex-col bg-[#1f2a44] px-6 pb-6 space-y-4 md:hidden">
@@ -232,6 +246,21 @@
     document.querySelectorAll(".parallax").forEach(el => {
       el.style.transform = `translateY(${scrollY * 0.05}px)`;
     });
+  });
+</script>
+
+  <script>
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("mobileMenu");
+
+  btn.addEventListener("click", () => {
+    if (menu.classList.contains("max-h-0")) {
+      menu.classList.remove("max-h-0");
+      menu.classList.add("max-h-[400px]");
+    } else {
+      menu.classList.remove("max-h-[400px]");
+      menu.classList.add("max-h-0");
+    }
   });
 </script>
   
