@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f5f1ea;
+  background: #f3efe8;
   color: #2d2d2d;
 }
 
@@ -66,26 +66,30 @@ body {
 }
 
 .card {
-  background: white;
+  background: #1f2a44; /* navy */
   padding: 25px;
   border-radius: 18px;
   transition: 0.3s;
-  border: 1px solid #eee;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-
+/* TEXT COLORS INSIDE CARD */
 .card h3 {
-  color: #c5a46d;
+  color: #f4c27a; /* beige */
   margin-bottom: 10px;
 }
 
 .card p {
-  color: #555;
+  color: #d1d5db; /* soft white */
   font-size: 14px;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  border: 1px solid rgba(244,194,122,0.3);
 }
 
 /* RIGHT IMAGE */
@@ -100,7 +104,19 @@ body {
   height: 420px;
   border-radius: 30px;
   overflow: hidden;
-  border: 1px solid #e5d5b8;
+  border: 2px solid #c5a46d; /* beige border */
+  box-shadow: 0 15px 40px rgba(197,164,109,0.25); /* glow */
+  position: relative;
+}
+
+/* extra soft glow layer */
+.image-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  box-shadow: 0 0 60px rgba(197,164,109,0.15);
+  pointer-events: none;
 }
 
 .image-box img {
