@@ -109,11 +109,10 @@ body {
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 80px 40px;
+  padding: 40px 40px 80px; /* ↓ reduced top padding */
   display: flex;
-  align-items: center; /* CENTER alignment fix */
-  gap: 120px; /* more space between left & right */
-  position: relative;
+  align-items: center;
+  gap: 120px;
 }
 
 /* LEFT */
@@ -123,7 +122,7 @@ body {
 }
 
 .section-title {
-  font-size: 56px;   /* bigger */
+  font-size: 42px;   /* bigger */
   font-weight: 700;
   margin-bottom: 10px;
   color: #1a1a1a;
@@ -231,8 +230,8 @@ body {
 }
   .side-title {
   position: absolute;
-  left: -60px; /* adjust spacing */
-  top: 50%;
+  left: -70px; /* adjust spacing */
+  top: 60%;
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
 
