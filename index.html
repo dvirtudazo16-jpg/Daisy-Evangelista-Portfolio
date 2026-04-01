@@ -24,6 +24,10 @@
 #mobileMenu.active {
   transform: translateX(0);
 }
+    #menuBtn {
+  position: relative;
+  z-index: 1100;
+}
 
 #mobileMenu {
   position: fixed;
@@ -32,7 +36,7 @@
   width: 100%;
   height: 100vh;
   background: #1f2f4a;
-  z-index: 999;
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
@@ -50,6 +54,16 @@
     #home div {
       pointer-events: auto;
     }
+    
+    #closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+}
 
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
@@ -84,6 +98,7 @@
 
   <div id="mobileMenu"
      class="max-h-0 overflow-hidden flex flex-col items-center gap-5 bg-[#1e2b45] transition-all duration-500 md:hidden relative z-40">
+     <button id="closeMenu">✕</button>
 
     <a href="./index.html">Home</a>
     <a href="./about.html">About</a>
@@ -259,18 +274,17 @@
 </script>
 
 <script>
-    const btn = document.getElementById("menuBtn");
-    const menu = document.getElementById("mobileMenu");
+  const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeMenu");
 
-    btn.addEventListener("click", () => {
-      if (menu.classList.contains("max-h-0")) {
-        menu.classList.remove("max-h-0");
-        menu.classList.add("max-h-[400px]");
-      } else {
-        menu.classList.remove("max-h-[400px]");
-        menu.classList.add("max-h-0");
-      }
-    });
+btn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  menu.classList.remove("active");
+});
   </script>
   
 </body>
