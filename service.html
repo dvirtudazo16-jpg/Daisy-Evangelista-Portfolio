@@ -113,12 +113,15 @@ body {
   display: flex;
   align-items: center;
   gap: 120px;
+  position: relative;
 }
 
 /* LEFT */
 .left {
   flex: 1;
   padding-top: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
@@ -228,16 +231,17 @@ body {
  
   .side-title {
   position: absolute;
-  left: -70px; /* adjust spacing */
-  top: 60%;
+  left: 10px; /* adjust spacing */
+  top: 50%;
   transform: translateY(-50%) rotate(180deg);
   writing-mode: vertical-rl;
-
-  font-size: 70px;
+  z-index: 0;
+  font-size: 50px;
   font-weight: 700;
-  color: #1f2a44;
-  opacity: 0.08; /* subtle background look */
-  letter-spacing: 5px;
+  color: #262f4c;
+  opacity: 0.06; /* subtle background look */
+  letter-spacing: 4px;
+  pointer-events: none;
 }
 
 /* MOBILE */
