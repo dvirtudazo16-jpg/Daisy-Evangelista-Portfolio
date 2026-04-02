@@ -223,18 +223,18 @@ body {
   box-shadow: 0 20px 50px rgba(197,164,109,0.3);
   animation: float 6s ease-in-out infinite;
 }
+    @keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
   
 .image-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-  @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
-}
- 
+
   .side-title {
   position: absolute;
   left: -70px; /* adjust spacing */
