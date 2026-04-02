@@ -7,11 +7,47 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
+<style>
 .fade-up {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
+}
+
+/* ✅ ADD YOUR TOOLS CSS HERE */
+.tools-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f5f1e8;
+}
+
+.tools-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  margin: 30px 0 15px;
+  font-size: 18px;
+  color: #444;
+}
+
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.tools-grid img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.2s ease;
+}
+
+.tools-grid img:hover {
+  transform: scale(1.2);
 }
 
     html {
@@ -191,7 +227,35 @@
   </div>
 </section>
 
-<div class="h-[1px] bg-white/10 w-4/5 mx-auto my-10"></div>
+<div class="h-[1px] bg-white/10 w-4/5 mx-auto my-10"></div
+
+<section class="tools-section">
+  <h2>TOOLS I USED</h2>
+
+  <p class="subtitle">General Virtual Assistant and Video Editing</p>
+  <div class="tools-grid">
+    <img src="https://cdn.simpleicons.org/gmail" alt="Gmail">
+    <img src="https://cdn.simpleicons.org/googledrive" alt="Google Drive">
+    <img src="https://cdn.simpleicons.org/googlecalendar" alt="Google Calendar">
+    <img src="https://cdn.simpleicons.org/googlesheets" alt="Google Sheets">
+    <img src="https://cdn.simpleicons.org/googledocs" alt="Google Docs">
+    <img src="https://cdn.simpleicons.org/googlemeet" alt="Google Meet">
+    <img src="https://cdn.simpleicons.org/zoom" alt="Zoom">
+    <img src="https://cdn.simpleicons.org/microsoftpowerpoint" alt="PowerPoint">
+    <img src="https://cdn.simpleicons.org/capcut" alt="CapCut">
+    <img src="https://cdn.simpleicons.org/canva" alt="Canva">
+  </div>
+
+  <p class="subtitle">Customer Service and Project Management</p>
+  <div class="tools-grid">
+    <img src="https://cdn.simpleicons.org/trello" alt="Trello">
+    <img src="https://cdn.simpleicons.org/slack" alt="Slack">
+    <img src="https://cdn.simpleicons.org/notion" alt="Notion">
+    <img src="https://cdn.simpleicons.org/openai" alt="ChatGPT">
+    <img src="https://cdn.simpleicons.org/clickup" alt="ClickUp">
+    <img src="https://cdn.simpleicons.org/asana" alt="Asana">
+  </div>
+</section>                                                       
   
 <section class="text-center px-5 py-12">
   <h2 class="text-2xl font-semibold mb-6">Why Work With Me?</h2>
