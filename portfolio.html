@@ -102,7 +102,7 @@ nav a {
 
 .section-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .section-title h2 {
@@ -128,6 +128,9 @@ nav a {
   border: 1px solid rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
   .card::before {
   content: "";
@@ -252,29 +255,31 @@ footer {
 
 <!-- PORTFOLIO -->
 <section class="section">
-  <div class="section-title">
-    <h2>Proven Systems. Real Results.</h2>
-  </div>
-
+<div class="section-title">
+  <p style="opacity:0.6; letter-spacing:1px;">PORTFOLIO</p>
+</div>
   <div class="grid">
 
     <!-- Inbox -->
-    <div class="card">
-      <h3>Inbox Management Workflow</h3>
-      <p>Structured email system using the 4D method.</p>
-      <ul>
-        <li>Inbox zero strategy</li>
-        <li>Smart categorization</li>
-        <li>Quick responses</li>
-      </ul>
-      <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
-  View Sample
-</a>
-    </div>
+   <div class="card">
+  <div>
+    <h3>Inbox Management Workflow</h3>
+    <p>Structured email system using the 4D method.</p>
+
+    <ul>
+      <li>Inbox zero strategy</li>
+      <li>Smart categorization</li>
+      <li>Quick responses</li>
+    </ul>
+  </div>
+
+  <a href="#" class="btn">View Sample</a>
+</div>
     
 
     <!-- Calendar -->
     <div class="card">
+       <div>
       <h3>Calendar Management</h3>
       <p>Priority-based scheduling system.</p>
       <ul>
@@ -282,6 +287,7 @@ footer {
         <li>Save 5–8 hrs weekly</li>
         <li>Improve productivity</li>
       </ul>
+       </div>
       <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
   View Sample
 </a>
@@ -289,6 +295,7 @@ footer {
 
     <!-- Agenda -->
     <div class="card">
+       <div>
       <h3>Meeting Agenda Template</h3>
       <p>Structured meeting planning system.</p>
       <ul>
@@ -296,6 +303,7 @@ footer {
         <li>Time allocation</li>
         <li>Assigned roles</li>
       </ul>
+          </div>
       <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
   View Sample
 </a>
@@ -303,6 +311,7 @@ footer {
 
     <!-- Minutes -->
     <div class="card">
+       <div>
       <h3>Meeting Minutes Template</h3>
       <p>Track decisions and accountability.</p>
       <ul>
@@ -310,6 +319,7 @@ footer {
         <li>Key decisions</li>
         <li>Follow-ups</li>
       </ul>
+          </div>
       <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
   View Sample
 </a>
@@ -317,6 +327,7 @@ footer {
 
     <!-- Social Media -->
     <div class="card">
+       <div>
       <h3>Social Media Content System</h3>
       <p>Consistent content planning workflow.</p>
       <ul>
@@ -324,6 +335,7 @@ footer {
         <li>Strategy alignment</li>
         <li>Posting system</li>
       </ul>
+          </div>
       <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
   View Sample
 </a>
