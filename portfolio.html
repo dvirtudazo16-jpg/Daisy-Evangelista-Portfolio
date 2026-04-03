@@ -65,16 +65,16 @@ nav a {
 .hero {
   background: linear-gradient(135deg, #2f3b5b, #3d4a6b);
   color: white;
-  text-align: center;
-  padding: 120px 20px 80px;
-  min-height: 60vh;
+
+  min-height: 70vh; /* controls height */
+  
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-  .hero .btn {
-  margin-top: 15px;
-  display: inline-block;
+  justify-content: center; /* vertical center */
+  align-items: center;     /* horizontal center */
+  
+  text-align: center;
+  padding: 40px 20px;
 }
 
 .hero h1 {
@@ -236,6 +236,14 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <h1>My Work Speaks for Itself</h1>
+  
+<div style="
+  width: 80px;
+  height: 2px;
+  background: #d4a64a;
+  margin: 20px auto;">
+</div>
+  
   <p>Systems, workflows, and support that help businesses stay organized and scale efficiently.</p>
   
 </section>
