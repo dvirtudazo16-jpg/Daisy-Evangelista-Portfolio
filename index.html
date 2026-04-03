@@ -373,43 +373,50 @@
 </div>
 
   <!-- RIGHT SIDE (GLASS CARD) -->
-    <div class="flex justify-center md:justify-end mt-10 md:mt-0">
-      
-      <div class="absolute right-0 w-96 h-96 bg-[#C8A97E]/20 blur-[120px] rounded-full">
+  <div class="flex justify-center md:justify-end mt-10 md:mt-0 relative">
 
+  <!-- glow -->
+  <div class="absolute inset-0 flex justify-end">
+    <div class="w-80 h-80 bg-[#C8A97E]/20 blur-[120px] rounded-full"></div>
+  </div>
+
+  <!-- card -->
   <div class="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10
-       shadow-[0_20px_80px_rgba(0,0,0,0.4)]
-       hover:-translate-y-1 hover:scale-[1.02]
-       transition duration-500"
+              shadow-[0_20px_80px_rgba(0,0,0,0.4)]
+              hover:-translate-y-1 hover:scale-[1.02]
+              transition duration-500 relative z-10">
 
-     <!-- PHONE -->
-        <a href="tel:+639369856533"
-           class="flex items-center gap-4 mb-6 group">
+    <!-- PHONE -->
+    <a href="tel:+639369856533"
+       class="flex items-center gap-4 mb-6 group">
 
-          <div class="bg-white/10 p-4 rounded-2xl hover:bg-[#C8A97E]/20 hover:scale-110 transition duration-300">
-            <img src="https://cdn.simpleicons.org/whatsapp"
-                 class="w-6 invert">
-          </div>
-
-         <p class="text-white/80 group-hover:text-white transition">
-            +63 936 985 4533
-          </p>
-        </a>
-
-      <!-- EMAIL -->
-        <a href="mailto:daisy.evangelista.0205@gmail.com"
-            class="flex items-center gap-4 group">
-
-          <div class="bg-white/10 p-4 rounded-2xl hover:bg-[#C8A97E]/20 hover:scale-110 transition duration-300">
-    <img src="https://cdn.simpleicons.org/gmail" class="w-6 invert">
+      <div class="bg-white/10 p-3 rounded-xl group-hover:bg-[#C8A97E]/20 transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+             class="w-6 h-6">
       </div>
 
-           <p class="text-white/80 group-hover:text-white transition break-all">
-    daisy.evangelista.0205@gmail.com
-  </p>
-        </a>
+      <p class="text-white/70 group-hover:text-white transition">
+        +63 936 985 6533
+      </p>
+    </a>
+
+    <!-- EMAIL -->
+    <a href="mailto:daisy.evangelista.0205@gmail.com"
+       class="flex items-center gap-4 group">
+
+      <div class="bg-white/10 p-3 rounded-xl group-hover:bg-[#C8A97E]/20 transition">
+        <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
+             class="w-6 h-6">
       </div>
-    </div>
+
+      <p class="text-white/70 group-hover:text-white transition break-all">
+        daisy.evangelista.0205@gmail.com
+      </p>
+    </a>
+
+  </div>
+
+  </div>
 
   </div>
 
