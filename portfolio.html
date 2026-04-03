@@ -63,10 +63,18 @@ nav a {
 
 /* HERO */
 .hero {
-  background: var(--navy);
+  background: linear-gradient(135deg, #2f3b5b, #3d4a6b);
   color: white;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px 80px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+  .hero .btn {
+  margin-top: 15px;
+  display: inline-block;
 }
 
 .hero h1 {
@@ -84,6 +92,7 @@ nav a {
 /* SECTION */
 .section {
   padding: 80px 8%;
+  background: #f5f6f8;
 }
 
 .section-title {
@@ -105,33 +114,55 @@ nav a {
 
 /* CARD */
 .card {
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
   padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+  .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #d4a64a, #f2d17b);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .card h3 {
   font-family: 'Playfair Display', serif;
   margin-bottom: 10px;
+  color: #2f3b5b;
 }
 
-.card ul {
-  margin-top: 10px;
-  padding-left: 18px;
+.card ul li {
+  margin-bottom: 6px;
+}
+  .card .btn {
+  margin-top: 20px;
 }
 
 /* RESULTS SECTION */
 .results {
-  background: var(--navy);
+  background: linear-gradient(135deg, #2f3b5b, #3a4766);
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
+}
+  .results p {
+  max-width: 600px;
+  margin: auto;
+  opacity: 0.9;
 }
 
 .results h2 {
@@ -142,14 +173,30 @@ nav a {
 
 /* CTA */
 .cta {
-  background: var(--light);
+  background: #ffffff;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
+}
+  .cta .btn {
+  margin-top: 15px;
 }
 
 .cta h2 {
   font-family: 'Playfair Display', serif;
   margin-bottom: 20px;
+}
+  /* BUTTON IMPROVEMENT */
+.btn {
+  background: linear-gradient(135deg, #d4a64a, #e6c06d);
+  color: black;
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -190,7 +237,7 @@ footer {
 <section class="hero">
   <h1>My Work Speaks for Itself</h1>
   <p>Systems, workflows, and support that help businesses stay organized and scale efficiently.</p>
-  <a href="#" class="btn">View Projects</a>
+  
 </section>
 
 <!-- PORTFOLIO -->
@@ -210,7 +257,11 @@ footer {
         <li>Smart categorization</li>
         <li>Quick responses</li>
       </ul>
+      <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
+  View Sample
+</a>
     </div>
+    
 
     <!-- Calendar -->
     <div class="card">
@@ -221,6 +272,9 @@ footer {
         <li>Save 5–8 hrs weekly</li>
         <li>Improve productivity</li>
       </ul>
+      <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
+  View Sample
+</a>
     </div>
 
     <!-- Agenda -->
@@ -232,6 +286,9 @@ footer {
         <li>Time allocation</li>
         <li>Assigned roles</li>
       </ul>
+      <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
+  View Sample
+</a>
     </div>
 
     <!-- Minutes -->
@@ -243,6 +300,9 @@ footer {
         <li>Key decisions</li>
         <li>Follow-ups</li>
       </ul>
+      <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
+  View Sample
+</a>
     </div>
 
     <!-- Social Media -->
@@ -254,6 +314,9 @@ footer {
         <li>Strategy alignment</li>
         <li>Posting system</li>
       </ul>
+      <a href="#" class="btn" style="margin-top:15px; display:inline-block;">
+  View Sample
+</a>
     </div>
 
   </div>
