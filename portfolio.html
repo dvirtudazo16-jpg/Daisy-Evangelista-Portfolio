@@ -422,8 +422,18 @@ footer {
   <p>Daisy Evangelista — Virtual Assistant</p>
 </footer>
 
-  <script>
-// SOCIAL MEDIA IMAGES ONLY
+  <div id="modal" class="modal">
+  <span class="close">&times;</span>
+
+  <img class="modal-content" id="modal-img">
+
+  <div class="nav">
+    <span class="prev">&#10094;</span>
+    <span class="next">&#10095;</span>
+  </div>
+</div>
+
+ <script>
 const socialImages = [
   "images/social1.png",
   "images/social2.png",
@@ -439,59 +449,43 @@ let autoPlayInterval;
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
 
-// OPEN MODAL (for social only)
 function openSocialModal(index) {
   currentIndex = index;
   modal.style.display = "flex";
   modalImg.src = socialImages[currentIndex];
-
   startAutoPlay();
 }
 
-// CLOSE MODAL
 function closeModal() {
   modal.style.display = "none";
   stopAutoPlay();
 }
 
-// NEXT IMAGE
 function nextImg() {
-  currentIndex = (currentIndex + 1) % images.length;
-  modalImg.src = images[currentIndex];
+  currentIndex = (currentIndex + 1) % socialImages.length;
+  modalImg.src = socialImages[currentIndex];
 }
 
-// PREVIOUS IMAGE
 function prevImg() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  modalImg.src = images[currentIndex];
+  currentIndex = (currentIndex - 1 + socialImages.length) % socialImages.length;
+  modalImg.src = socialImages[currentIndex];
 }
 
-// AUTOPLAY
 function startAutoPlay() {
-  autoPlayInterval = setInterval(() => {
-    nextImg();
-  }, 2500);
+  autoPlayInterval = setInterval(nextImg, 2500);
 }
 
 function stopAutoPlay() {
   clearInterval(autoPlayInterval);
 }
 
-// CLOSE
-function closeModal() {
-  modal.style.display = "none";
-  stopAutoPlay();
-}
-
 // EVENTS
-/ Pause autoplay when user hovers
-modalImg.addEventListener("mouseenter", stopAutoPlay);
-modalImg.addEventListener("mouseleave", startAutoPlay);
-
-// BUTTON EVENTS
 document.querySelector(".close").onclick = closeModal;
 document.querySelector(".next").onclick = nextImg;
 document.querySelector(".prev").onclick = prevImg;
+
+modalImg.addEventListener("mouseenter", stopAutoPlay);
+modalImg.addEventListener("mouseleave", startAutoPlay);
 </script>
 
 </body>
