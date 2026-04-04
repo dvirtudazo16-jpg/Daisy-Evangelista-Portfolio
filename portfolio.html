@@ -224,6 +224,56 @@ footer {
   padding: 30px;
 }
 
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+  @keyframes fadeIn {
+  to { opacity: 1; }
+}
+  .modal-content:hover {
+  transform: scale(1.08);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.nav span {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev { left: 30px; }
+.next { right: 30px; }
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero h1 {
@@ -345,9 +395,9 @@ footer {
         <li>Caption and posting system</li>
       </ul>
           </div>
-      <a href="https://drive.google.com/file/d/1_1I0NHya5GafsORfcZQ54gTyijpHA5yQ/view?usp=sharing/preview" target="_blank" class="btn" style="margin-top:15px; display:inline-block;">
+      <button class="btn" onclick="openSocialModal(0)">
   View Sample
-</a>
+</button>
     </div>
 
   </div>
@@ -371,6 +421,78 @@ footer {
 <footer>
   <p>Daisy Evangelista — Virtual Assistant</p>
 </footer>
+
+  <script>
+// SOCIAL MEDIA IMAGES ONLY
+const socialImages = [
+  "images/social1.png",
+  "images/social2.png",
+  "images/social3.png",
+  "images/social4.png",
+  "images/social5.png",
+  "images/social6.png"
+];
+
+let currentIndex = 0;
+let autoPlayInterval;
+
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+
+// OPEN MODAL (for social only)
+function openSocialModal(index) {
+  currentIndex = index;
+  modal.style.display = "flex";
+  modalImg.src = socialImages[currentIndex];
+
+  startAutoPlay();
+}
+
+// CLOSE MODAL
+function closeModal() {
+  modal.style.display = "none";
+  stopAutoPlay();
+}
+
+// NEXT IMAGE
+function nextImg() {
+  currentIndex = (currentIndex + 1) % images.length;
+  modalImg.src = images[currentIndex];
+}
+
+// PREVIOUS IMAGE
+function prevImg() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  modalImg.src = images[currentIndex];
+}
+
+// AUTOPLAY
+function startAutoPlay() {
+  autoPlayInterval = setInterval(() => {
+    nextImg();
+  }, 2500);
+}
+
+function stopAutoPlay() {
+  clearInterval(autoPlayInterval);
+}
+
+// CLOSE
+function closeModal() {
+  modal.style.display = "none";
+  stopAutoPlay();
+}
+
+// EVENTS
+/ Pause autoplay when user hovers
+modalImg.addEventListener("mouseenter", stopAutoPlay);
+modalImg.addEventListener("mouseleave", startAutoPlay);
+
+// BUTTON EVENTS
+document.querySelector(".close").onclick = closeModal;
+document.querySelector(".next").onclick = nextImg;
+document.querySelector(".prev").onclick = prevImg;
+</script>
 
 </body>
 </html>
