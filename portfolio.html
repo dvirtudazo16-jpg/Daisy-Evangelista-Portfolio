@@ -332,7 +332,9 @@ footer {
     </ul>
   </div>
 
-  <a href="https://drive.google.com/file/d/1wV2CXVYzgab1ccTXavKGgEjlHw2kYRU8/view?usp=sharing/preview" target="_blank" class="btn">View Sample</a>
+ <button class="btn" onclick="openModal('inbox')">
+  View Sample
+</button>
 </div>
     
 
@@ -347,9 +349,9 @@ footer {
         <li>Improved task completion by 30%</li>
       </ul>
        </div>
-      <a href="https://drive.google.com/file/d/1O4uJmHlPmNvlXDayzWRTY3X8Vmt2NULt/view?usp=sharing/preview" target="_blank" class="btn" style="margin-top:15px; display:inline-block;">
+     <button class="btn" onclick="openModal('calendar')">
   View Sample
-</a>
+</button>
     </div>
 
     <!-- Agenda -->
@@ -363,9 +365,9 @@ footer {
         <li>Assigned leads and responsibilities</li>
       </ul>
           </div>
-      <a href="https://drive.google.com/file/d/10d8Qe6d3ErRJYi1hwonm9ErzoRHp8lbD/view?usp=sharing/preview" target="_blank" class="btn" style="margin-top:15px; display:inline-block;">
+      <button class="btn" onclick="openModal('agenda')">
   View Sample
-</a>
+</button>
     </div>
 
     <!-- Minutes -->
@@ -379,9 +381,9 @@ footer {
   <li>Action items with deadlines</li>
       </ul>
           </div>
-      <a href="https://drive.google.com/file/d/1iwV3T-vW-SxFCyD56t5GDYTP6d4-Iebj/view?usp=sharing/preview" target="_blank" class="btn" style="margin-top:15px; display:inline-block;">
+     <button class="btn" onclick="openModal('minutes')">
   View Sample
-</a>
+</button>
     </div>
 
     <!-- Social Media -->
@@ -422,10 +424,14 @@ footer {
   <p>Daisy Evangelista — Virtual Assistant</p>
 </footer>
 
-  <div id="modal" class="modal">
+ <div id="modal" class="modal">
   <span class="close">&times;</span>
 
-  <img class="modal-content" id="modal-img">
+  <!-- IMAGE -->
+  <img class="modal-content" id="modal-img" style="display:none;">
+
+  <!-- PDF -->
+  <iframe id="modal-pdf" style="display:none; width:80%; height:80%; border:none;"></iframe>
 
   <div class="nav">
     <span class="prev">&#10094;</span>
@@ -433,27 +439,64 @@ footer {
   </div>
 </div>
 
- <script>
-const socialImages = [
-  "social1.png",
-  "social2.png",
-  "social3.png",
-  "social4.png",
-  "social5.png",
-  "social6.png"
-];
+<script>
+const galleries = {
+  social: {
+    type: "image",
+    items: [
+      "social1.png",
+      "social2.png",
+      "social3.png",
+      "social4.png",
+      "social5.png",
+      "social6.png"
+    ]
+  },
+  inbox: {
+    type: "image",
+    items: ["inbox.png"]
+  },
+  calendar: {
+    type: "image",
+    items: ["calendar.png"]
+  },
+  agenda: {
+    type: "pdf",
+    items: ["agenda.pdf"]
+  },
+  minutes: {
+    type: "pdf",
+    items: ["minute.pdf"]
+  }
+};
 
 let currentIndex = 0;
+let currentGallery = [];
+let currentType = "image";
 let autoPlayInterval;
 
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
+const modalPdf = document.getElementById("modal-pdf");
 
-function openSocialModal(index) {
+function openModal(type, index = 0) {
+  currentGallery = galleries[type].items;
+  currentType = galleries[type].type;
   currentIndex = index;
+
   modal.style.display = "flex";
-  modalImg.src = socialImages[currentIndex];
-  startAutoPlay();
+
+  if (currentType === "image") {
+    modalImg.style.display = "block";
+    modalPdf.style.display = "none";
+    modalImg.src = currentGallery[currentIndex];
+    startAutoPlay();
+  } else {
+    modalImg.style.display = "none";
+    modalPdf.style.display = "block";
+    modalPdf.src = currentGallery[currentIndex];
+    stopAutoPlay();
+  }
 }
 
 function closeModal() {
@@ -462,13 +505,17 @@ function closeModal() {
 }
 
 function nextImg() {
-  currentIndex = (currentIndex + 1) % socialImages.length;
-  modalImg.src = socialImages[currentIndex];
+  if (currentType !== "image") return;
+
+  currentIndex = (currentIndex + 1) % currentGallery.length;
+  modalImg.src = currentGallery[currentIndex];
 }
 
 function prevImg() {
-  currentIndex = (currentIndex - 1 + socialImages.length) % socialImages.length;
-  modalImg.src = socialImages[currentIndex];
+  if (currentType !== "image") return;
+
+  currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+  modalImg.src = currentGallery[currentIndex];
 }
 
 function startAutoPlay() {
