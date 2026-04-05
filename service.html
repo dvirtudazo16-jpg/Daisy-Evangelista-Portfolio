@@ -12,6 +12,52 @@
 .vertical-text {
   writing-mode: vertical-rl;
 }
+
+  #mobileMenu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* hide off screen */
+
+  width: 100%;
+  height: 100vh;
+  background: #1f2f4a;
+
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  transition: 0.4s ease;
+  transform: translateX(-100%);
+  
+}
+
+#mobileMenu.active {
+  left: 0;
+   transform: translateX(0);
+}
+    
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+    #home div {
+      pointer-events: auto;
+    }
+    
+    #closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+}
+
 </style>
 
 </head>
@@ -25,14 +71,31 @@
     Daisy
   </a>
 
+   <button id="menuBtn" class="text-2xl md:hidden relative z-[1100]">
+      ☰
+    </button>
+
   <div class="hidden md:flex space-x-8">
     <a href="./index.html" class="text-white hover:text-[#c5a46d] transition">Home</a>
     <a href="./about.html" class="text-white hover:text-[#c5a46d] transition">About</a>
     <a href="./service.html" class="text-[#c5a46d] font-medium">Services</a>
     <a href="./portfolio.html" class="text-white hover:text-[#c5a46d] transition">Portfolio</a>
     <a href="./index.html#contact" class="text-white hover:text-[#c5a46d] transition">Contact</a>
+    <a href="#contact" class="bg-yellow-400 text-black px-4 py-2 rounded-full">
+        Hire Me
+      </a>
   </div>
-
+  <div id="mobileMenu" class="md:hidden">
+     <button id="closeMenu"></button>
+ <a href="./index.html" class="text-white hover:text-[#c5a46d] transition">Home</a>
+    <a href="./about.html" class="text-white hover:text-[#c5a46d] transition">About</a>
+    <a href="./service.html" class="text-[#c5a46d] font-medium">Services</a>
+    <a href="./portfolio.html" class="text-white hover:text-[#c5a46d] transition">Portfolio</a>
+    <a href="./index.html#contact" class="text-white hover:text-[#c5a46d] transition">Contact</a>
+    <a href="#contact" class="bg-yellow-400 text-black px-4 py-2 rounded-full">
+        Hire Me
+      </a>
+  </div>
 </div>
 
 <!-- SECTION -->
@@ -90,17 +153,19 @@
     </div>
 
     <!-- CTA -->
-    <div class="mt-10 flex gap-4 flex-wrap">
-      <a href="contact.html" class="bg-[#c5a46d] text-white px-6 py-3 rounded-full hover:bg-[#b8955f] transition transform hover:-translate-y-1">
-        Work With Me
-      </a>
+   <div class="mt-12 flex flex-col items-center gap-4">
 
-      <a href="portfolio.html" class="border border-[#c5a46d] text-[#c5a46d] px-6 py-3 rounded-full hover:bg-[#c5a46d] hover:text-white transition transform hover:-translate-y-1">
-        View Portfolio
-      </a>
-    </div>
+  <a href="contact.html" 
+     class="w-full max-w-xs text-center bg-[#c5a46d] text-white px-6 py-3 rounded-full hover:bg-[#b8955f] transition transform hover:-translate-y-1">
+    Work With Me
+  </a>
 
-  </div>
+  <a href="portfolio.html" 
+     class="w-full max-w-xs text-center border border-[#c5a46d] text-[#c5a46d] px-6 py-3 rounded-full hover:bg-[#c5a46d] hover:text-white transition transform hover:-translate-y-1">
+    View Portfolio
+  </a>
+
+</div>
 
   <!-- RIGHT IMAGE -->
 <div class="flex-1 flex justify-center items-center">
@@ -122,6 +187,21 @@
   </div>
 
 </div>
+  
+  <script>
+  const btn = document.getElementById("menuBtn");
+const menu = document.getElementById("mobileMenu");
+const closeBtn = document.getElementById("closeMenu");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  menu.classList.remove("active");
+});
+  </script>
+
 
 </body>
 </html>
