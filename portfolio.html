@@ -493,6 +493,7 @@ function openModal(type, index = 0) {
     modalImg.style.display = "block";
     modalPdf.style.display = "none";
     modalImg.src = currentGallery[currentIndex];
+    console.log(currentGallery[currentIndex]);
     startAutoPlay();
   } else {
     modalImg.style.display = "none";
@@ -512,6 +513,7 @@ function nextImg() {
 
   currentIndex = (currentIndex + 1) % currentGallery.length;
   modalImg.src = currentGallery[currentIndex];
+  console.log(currentGallery[currentIndex]);
 }
 
 function prevImg() {
@@ -519,6 +521,7 @@ function prevImg() {
 
   currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
   modalImg.src = currentGallery[currentIndex];
+  console.log(currentGallery[currentIndex]);
 }
 
 function startAutoPlay() {
