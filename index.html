@@ -13,8 +13,23 @@
   transform: translateY(30px);
   transition: all 0.8s ease;
 }
-  .contact-card p {
-  overflow-wrap: anywhere;
+  .contact-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* THIS IS THE KEY FIX */
+.contact-row p {
+  flex: 1;
+  min-width: 0; /* 🔥 VERY IMPORTANT */
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+  .contact-card {
+  max-width: 350px;
+  margin: 40px auto;
 }
 
 /* ✅ ADD YOUR TOOLS CSS HERE */
