@@ -98,8 +98,6 @@
         Hire Me</a>
 </nav>
 
-  </div>
-
 <div id="mobileMenu" class="md:hidden">
      <button id="closeMenu"></button>
 
@@ -159,7 +157,7 @@
           Work With Me
         </a>
 
-        <a href="./index.html#portfolio"
+        <a href="./portfolio.html"
            class="border border-[#C8A97E] text-[#C8A97E] px-7 py-3 rounded-full hover:bg-[#C8A97E] hover:text-white transition duration-300">
           View Portfolio
         </a>
@@ -169,6 +167,20 @@
 
   </div>
 </section>
+
+  <script>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const closeMenu = document.getElementById("closeMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.add("active");
+});
+
+closeMenu.addEventListener("click", () => {
+  mobileMenu.classList.remove("active");
+});
+</script>
 
 </body>
 </html>
