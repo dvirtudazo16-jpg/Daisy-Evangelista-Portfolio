@@ -12,6 +12,16 @@
 .vertical-text {
   writing-mode: vertical-rl;
 }
+  .fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
  #mobileMenu {
   display: none;
@@ -108,7 +118,7 @@ transform: translateX(-100%);
     <!-- LEFT -->
     <div class="flex-1 w-full">
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-3">
+      <h1 class="fade-up text-3xl md:text-4xl font-bold mb-3">
         What I Can Do For You
       </h1>
 
@@ -117,7 +127,7 @@ transform: translateX(-100%);
       <!-- GRID -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
 
-        <div class="bg-white p-5 rounded-xl shadow-md">
+        <div class="fade-up bg-white p-5 rounded-xl shadow-md">
           <h3 class="font-semibold mb-2">Email & Inbox Organization</h3>
         <p>Keep your inbox clean, organized, and stress-free while ensuring timely responses.</p>
         </div>
@@ -169,7 +179,7 @@ transform: translateX(-100%);
     <!-- RIGHT -->
     <div class="flex-1 flex justify-center w-full">
 
-      <div class="w-[300px] md:w-[420px] h-[300px] md:h-[420px] rounded-3xl overflow-hidden border-2 border-[#c5a46d] shadow-xl">
+      <div class="fade-up w-[300px] md:w-[420px] h-[300px] md:h-[420px] rounded-3xl overflow-hidden border-2 border-[#c5a46d] shadow-xl">
 
         <img src="service.png"
              class="w-full h-full object-cover"
@@ -196,6 +206,22 @@ closeBtn.addEventListener("click", () => {
   menu.classList.remove("active");
 });
   </script>
+  
+  <script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+document.querySelectorAll(".fade-up").forEach(el => {
+  observer.observe(el);
+});
+</script>
 
 
 </body>
