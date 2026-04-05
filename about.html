@@ -21,6 +21,34 @@
   animation: fadeInUp 1s ease-out;
      will-change: transform, opacity;
 }
+   #mobileMenu.active {
+  left: 0;
+   transform: translateX(0);
+}
+    
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+    #home div {
+      pointer-events: auto;
+    }
+    
+    #closeMenu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
   
   </style>
   
@@ -47,9 +75,24 @@
      <a href="./index.html#contact" class="bg-yellow-400 text-black px-4 py-2 rounded-full">
         Hire Me</a>
 </nav>
+
+  </div>
+
+<div id="mobileMenu" class="md:hidden">
+     <button id="closeMenu"></button>
+
+    <a href="./index.html" class="hover:text-[#C8A97E]">Home</a>
+  <a href="./about.html" class="text-[#C8A97E] font-semibold">About</a>
+   <a href="./service.html" class="hover:text-[#C8A97E]">Services</a>
+  <a href="./portfolio.html" class="hover:text-[#C8A97E]">Portfolio</a>
+    <a href="./index.html#contact" class="hover:text-[#C8A97E]">Contact</a>
+     <a href="./index.html#contact" class="bg-yellow-400 text-black px-4 py-2 rounded-full">
+        Hire Me</a>
+  </div>
+
   </header>
 
-<section class="bg-[#F5F1EB] text-[#2E2E3A] py-28 md:py-32 px-6 md:px-16 mt-16">
+<section class="bg-[#F5F1EB] text-[#2E2E3A] pt-24 pb-16 md:pt-28 md:pb-20 px-6 md:px-16">
 
   <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
