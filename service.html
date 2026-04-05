@@ -14,7 +14,7 @@
 }
 
  #mobileMenu {
-  display: none;   /* hide completely */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +30,7 @@
 }
 
 #mobileMenu.active {
-  display: flex;   /* show only when active */
+  display: flex;
 }
     
 .fade-up.show {
@@ -50,6 +50,8 @@
   border: none;
   color: white;
 }
+  left: -100%;
+transform: translateX(-100%);
 
 </style>
 
@@ -64,9 +66,9 @@
     Daisy
   </a>
 
-   <button id="menuBtn" class="text-2xl md:hidden relative z-[1000]">
-      ☰
-    </button>
+  <button id="menuBtn" class="text-2xl text-white md:hidden relative z-[1100]">
+  ☰
+</button>
 
   <nav class="hidden md:flex gap-6 items-center">
     <a href="./index.html" class="text-white hover:text-[#c5a46d] transition">Home</a>
@@ -90,7 +92,7 @@
         Hire Me
       </a>
   </div>
-</div>
+
 
 <!-- SECTION -->
 <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 relative">
