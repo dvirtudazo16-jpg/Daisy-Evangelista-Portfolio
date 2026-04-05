@@ -13,30 +13,24 @@
   writing-mode: vertical-rl;
 }
 
-  #mobileMenu {
+ #mobileMenu {
+  display: none;   /* hide completely */
   position: fixed;
   top: 0;
-  left: -100%; /* hide off screen */
-
+  left: 0;
   width: 100%;
   height: 100vh;
   background: #1f2f4a;
+  z-index: 999;
 
-   z-index: 900;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
-
-  transition: 0.4s ease;
-  transform: translateX(-100%);
-  
 }
 
 #mobileMenu.active {
-  left: 0;
-   transform: translateX(0);
+  display: flex;   /* show only when active */
 }
     
 .fade-up.show {
@@ -70,7 +64,7 @@
     Daisy
   </a>
 
-   <button id="menuBtn" class="text-2xl md:hidden relative z-[1100]">
+   <button id="menuBtn" class="text-2xl md:hidden relative z-[1000]">
       ☰
     </button>
 
