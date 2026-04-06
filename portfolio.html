@@ -436,28 +436,31 @@ footer {
    
  
     <!-- Hamburger -->
-  <div class="mobile-menu">
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+   <button id="menuBtn" class="text-white text-2xl">
+  ☰
+</button
+<div id="mobileMenu" class="fixed inset-0 bg-[#2f3e5c] hidden flex items-center justify-center z-50">
 
-    <a href="./index.html" style="color:white; margin:15px 0;">Home</a>
-    <a href="./about.html" style="color:white; margin:15px 0;">About</a>
-    <a href="./service.html" style="color:white; margin:15px 0;">Services</a>
-    <a href="./portfolio.html" style="color:white; margin:15px 0;">Portfolio</a>
-    <a href="./index.html#contact" style="color:white; margin:15px 0;">Contact</a>
+  <!-- CLOSE BUTTON (inside) -->
+  <button id="closeMenu" class="absolute top-6 right-6 text-white text-2xl">
+    ✕
+  </button>
 
-    <a href="./index.html#contact" style="
-      margin-top:20px;
-      background:#d4a64a;
-      color:black;
-      padding:12px 24px;
-      border-radius:30px;
-      text-decoration:none;
-    ">
-      Hire Me
+  <div class="flex flex-col items-center space-y-6 text-white text-lg">
+
+    <a href="./index.html">Home</a>
+    <a href="./about.html">About</a>
+    <a href="./service.html">Services</a>
+    <a href="./portfolio.html">Portfolio</a>
+    <a href="./index.html#contact">Contact</a>
+
+    <a href="./index.html#contact"
+       class="mt-5 bg-yellow-400 text-black px-6 py-3 rounded-full">
+       Hire Me
     </a>
 
   </div>
-      </div>
+</div>
 
 </nav>
 
@@ -708,16 +711,31 @@ modalImg.addEventListener("mouseenter", stopAutoPlay);
 modalImg.addEventListener("mouseleave", startAutoPlay);
 </script>
   
-  <script>
-function toggleMenu() {
+<script>
+  const btn = document.getElementById("menuBtn");
   const menu = document.getElementById("mobileMenu");
+  const links = document.querySelectorAll("#mobileMenu a");
+  const closeBtn = document.getElementById("closeMenu");
 
-  if (menu.style.display === "flex") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "flex";
+  // Toggle menu
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  // Close when clicking links
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+    });
+  });
+
+  // Close button (X)
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      menu.classList.add("hidden");
+    });
   }
-}
 </script>
+  
 </body>
 </html>
