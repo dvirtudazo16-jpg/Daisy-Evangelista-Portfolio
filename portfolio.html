@@ -34,17 +34,22 @@ nav {
   color: white;
   display: flex;
   justify-content: space-between;
+  align-items: center; /* 🔥 THIS FIXES ALIGNMENT */
   padding: 20px 8%;
 }
 
 nav h2 {
   font-family: 'Playfair Display', serif;
+   margin: 0;
 }
 
 nav ul {
+  margin: 0;
+  padding: 0;
   display: flex;
   gap: 25px;
   list-style: none;
+  align-items: center; /* 🔥 aligns links vertically */
 }
 
 nav a {
@@ -329,7 +334,7 @@ footer {
   Daisy
 </a></h2>
   
-   <ul class="flex gap-6 text-sm">
+   <ul id="mobile-menu" class="flex gap-6 text-sm">
   <li><a href="./index.html" class="hover:text-[#C8A97E]">Home</a></li>
   <li><a href="./about.html" class="text-[#C8A97E] font-semibold">About</a></li>
    <li><a href="./service.html" class="hover:text-[#C8A97E]">Services</a></li>
