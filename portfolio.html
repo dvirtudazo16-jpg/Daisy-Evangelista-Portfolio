@@ -164,9 +164,15 @@ nav a {
   font-size: 14px;
 }
 .card .btn {
-  align-self: center;
+  display: block;
+  margin: 20px auto 0;
   padding: 12px 24px;
   font-size: 14px;
+}
+  .btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 /* RESULTS SECTION */
@@ -215,6 +221,7 @@ nav a {
 .btn:hover {
   transform: scale(1.05);
 }
+  
 
 /* FOOTER */
 footer {
@@ -274,14 +281,38 @@ footer {
 .prev { left: 30px; }
 .next { right: 30px; }
 
+  /* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
 /* RESPONSIVE */
 @media(max-width:768px){
-  .hero h1 {
-    font-size: 32px;
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: relative;
   }
 
   nav ul {
+    position: absolute;
+    top: 70px;
+    right: 8%;
+    background: #2f3b5b;
+    flex-direction: column;
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
     display: none;
+  }
+
+  nav ul.active {
+    display: flex;
   }
 }
 </style>
@@ -291,16 +322,23 @@ footer {
 
 <!-- NAV -->
 <nav>
+  <div class="menu-toggle" onclick="toggleMenu()">
+  ☰
+</div>
   <h2><a href="./index.html" class="font-bold text-lg text-white">
   Daisy
 </a></h2>
   
-  <ul>
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./service.html">Services</a></li>
-    <li><a href="./portfolio.html">Portfolio</a></li>
-    <a href="#contact" class="hire-btn">Hire Me</a>
-  </ul>
+   <ul class="flex gap-6 text-sm">
+  <li><a href="./index.html" class="hover:text-[#C8A97E]">Home</a></li>
+  <li><a href="./about.html" class="text-[#C8A97E] font-semibold">About</a></li>
+   <li><a href="./service.html" class="hover:text-[#C8A97E]">Services</a></li>
+  <li><a href="./portfolio.html" class="hover:text-[#C8A97E]">Portfolio</a></li>
+    <li><a href="./index.html#contact" class="hover:text-[#C8A97E]">Contact</a></li>
+     <li><a href="./index.html#contact" class="bg-yellow-400 text-black px-4 py-2 rounded-full">
+        Hire Me
+      </a></li>
+</ul>
 </nav>
 
 <!-- HERO -->
@@ -334,10 +372,11 @@ footer {
       <li>Quick responses</li>
     </ul>
   </div>
-
+<div class="btn-wrapper">
  <button class="btn" onclick="openModal('inbox')">
   View Sample
 </button>
+   </div>
 </div>
     
 
@@ -352,9 +391,11 @@ footer {
         <li>Improved task completion by 30%</li>
       </ul>
        </div>
+      <div class="btn-wrapper">
      <button class="btn" onclick="openModal('calendar')">
   View Sample
 </button>
+         </div>
     </div>
 
     <!-- Agenda -->
@@ -368,9 +409,11 @@ footer {
         <li>Assigned leads and responsibilities</li>
       </ul>
           </div>
+       <div class="btn-wrapper">
       <button class="btn" onclick="openModal('agenda')">
   View Sample
 </button>
+          </div>
     </div>
 
     <!-- Minutes -->
@@ -384,25 +427,29 @@ footer {
   <li>Action items with deadlines</li>
       </ul>
           </div>
+      <div class="btn-wrapper">
      <button class="btn" onclick="openModal('minutes')">
   View Sample
 </button>
+          </div>
     </div>
 
     <!-- Social Media -->
     <div class="card">
        <div>
       <h3>Social Media Content System</h3>
-      <p>Consistent content planning, creating,and posting.</p>
+      <p>Consistent content planning, creating, and posting.</p>
       <ul>
         <li>Content calendar for consistent posting</li>
         <li>Strategic content planning framework</li>
         <li>Caption and posting system</li>
       </ul>
           </div>
+      <div class="btn-wrapper">
       <button class="btn" onclick="openModal('social')">
   View Sample
 </button>
+          </div>
     </div>
 
   </div>
@@ -539,6 +586,12 @@ document.querySelector(".prev").onclick = prevImg;
 
 modalImg.addEventListener("mouseenter", stopAutoPlay);
 modalImg.addEventListener("mouseleave", startAutoPlay);
+</script>
+  
+  <script>
+function toggleMenu() {
+  document.getElementById("mobile-menu").classList.toggle("active");
+}
 </script>
 
 </body>
