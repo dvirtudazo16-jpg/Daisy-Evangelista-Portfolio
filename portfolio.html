@@ -36,10 +36,27 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-  .logo {
+  /* LEFT */
+.nav-left .logo {
   color: white;
   font-family: 'Playfair Display', serif;
   font-size: 20px;
+}
+ /* RIGHT */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-right .active {
+  color: #d4a64a;
 }
  /* Desktop menu */
 .desktop-menu {
@@ -401,13 +418,14 @@ footer {
 <nav class="nav">
 
   <!-- Top Bar -->
-  <div style="display:flex; justify-content:space-between; align-items:center;">
+  <div class="nav-left"
+    style="display:flex; justify-content:space-between; align-items:center;">
 
     <!-- Logo -->
      <h2 class="logo"> <a href="./index.html">Daisy</a></h2>
 
     <!-- Desktop Menu -->
-    <div class="desktop-menu">
+    <div class="desktop-menu" nav-right>
       <a href="./index.html">Home</a>
       <a href="./about.html">About</a>
       <a href="./service.html">Services</a>
