@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -98,10 +98,10 @@ nav {
 }
 
 .btn {
-  background: var(--gold);
-  color: black;
-  padding: 10px 18px;
-  border-radius: 25px;
+  background: linear-gradient(135deg, #d4a64a, #e6c06d);
+  color: black; /* 👈 THIS FIX */
+  padding: 12px 22px;
+  border-radius: 30px;
   font-weight: 500;
 }
 
@@ -359,6 +359,8 @@ footer {
 
   .menu-btn {
     display: block;
+     position: relative;
+    z-index: 1001;
   }
 
   .mobile-menu {
@@ -368,8 +370,8 @@ footer {
   width: 100%;
   height: 100vh;
   background: #1f2f4a;
-
-  display: flex;
+  z-index: 1000;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -727,13 +729,13 @@ modalImg.addEventListener("mouseleave", startAutoPlay);
 
   // Toggle menu
   btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
+  menu.style.display = "flex";
+});
 
   // Close button (X)
-     closeBtn.addEventListener("click", () => {
-      menu.classList.add("hidden");
-    });
+    closeBtn.addEventListener("click", () => {
+  menu.style.display = "none";
+});
 </script>
   
 </body>
