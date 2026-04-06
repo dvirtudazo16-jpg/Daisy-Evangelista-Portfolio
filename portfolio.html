@@ -371,7 +371,7 @@ footer {
   height: 100vh;
   background: #1f2f4a;
   z-index: 1000;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -379,7 +379,7 @@ footer {
   transition: 0.4s;
   
 }
-  .mobileMenu.active {
+  .mobile-menu.active {
   left: 0;
    transform: translateX(0);
  }
@@ -456,7 +456,7 @@ footer {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobileMenu" class="mobile-menu" style="display:none;">
+  <div id="mobileMenu" class="mobile-menu">
 
     <button id="closeMenu" style="position:absolute; top:20px; right:30px; font-size:24px; color:white;">
       ✕
@@ -728,13 +728,13 @@ modalImg.addEventListener("mouseleave", startAutoPlay);
   const closeBtn = document.getElementById("closeMenu");
 
   // Toggle menu
-  btn.addEventListener("click", () => {
-  menu.style.display = "flex";
+ btn.addEventListener("click", () => {
+  menu.classList.add("active");
 });
 
   // Close button (X)
-    closeBtn.addEventListener("click", () => {
-  menu.style.display = "none";
+   closeBtn.addEventListener("click", () => {
+  menu.classList.remove("active");
 });
 </script>
   
