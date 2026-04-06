@@ -326,25 +326,57 @@ footer {
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="menu-toggle" onclick="toggleMenu()">
-  ☰
-</div>
-  <h2><a href="./index.html" class="font-bold text-lg text-white">
-  Daisy
-</a></h2>
-  
-  <div class="fixed inset-0 bg-[#2f3e5c] flex items-center justify-center z-50">
-  <div class="flex flex-col items-center space-y-6 text-white text-lg">
-    
-  <a href="./index.html" class="hover:text-[#C8A97E]">Home</a>
-  <a href="./about.html" class="text-[#C8A97E] font-semibold">About</a>
-  <a href="./service.html" class="hover:text-[#C8A97E]">Services</a>
-  <a href="./portfolio.html" class="hover:text-[#C8A97E]">Portfolio</a>
-  <a href="./index.html#contact" class="hover:text-[#C8A97E]">Contact</a>
-  <a href="./index.html#contact" class="bg-yellow-400 text-black px-4 py-2 rounded-full">Hire Me</a><
+<nav style="background:#2f3b5b; padding:20px 8%; position:relative;">
+
+  <!-- Top Bar -->
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+
+    <!-- Logo -->
+    <h2 style="color:white; font-family:'Playfair Display', serif;">
+      Daisy
+    </h2>
+
+    <!-- Hamburger -->
+    <button onclick="toggleMenu()" style="font-size:26px; color:white; background:none; border:none;">
+      ☰
+    </button>
+
   </div>
-</div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" style="
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:#2f3b5b;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:999;
+  ">
+
+    <a href="./index.html" style="color:white; margin:15px 0;">Home</a>
+    <a href="./about.html" style="color:white; margin:15px 0;">About</a>
+    <a href="./service.html" style="color:white; margin:15px 0;">Services</a>
+    <a href="./portfolio.html" style="color:white; margin:15px 0;">Portfolio</a>
+    <a href="./index.html#contact" style="color:white; margin:15px 0;">Contact</a>
+
+    <a href="./index.html#contact" style="
+      margin-top:20px;
+      background:#d4a64a;
+      color:black;
+      padding:12px 24px;
+      border-radius:30px;
+      text-decoration:none;
+    ">
+      Hire Me
+    </a>
+
+  </div>
+
 </nav>
 
 <!-- HERO -->
@@ -596,9 +628,14 @@ modalImg.addEventListener("mouseleave", startAutoPlay);
   
   <script>
 function toggleMenu() {
-  document.getElementById("mobile-menu").classList.toggle("active");
+  const menu = document.getElementById("mobileMenu");
+
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
 }
 </script>
-
 </body>
 </html>
