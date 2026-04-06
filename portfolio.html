@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daisy Evangelista | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
@@ -60,7 +61,7 @@ nav {
 }
  /* Desktop menu */
 .desktop-menu {
-  display: flex;
+  display: none;
   gap: 25px;
   align-items: center;
 }
@@ -417,15 +418,15 @@ footer {
 <!-- NAV -->
 <nav class="nav">
 
-  <!-- Top Bar -->
-  <div class="nav-left"
-    style="display:flex; justify-content:space-between; align-items:center;">
+  <div style="display:flex; justify-content:space-between; align-items:center; width:100%;">
 
     <!-- Logo -->
-     <h2 class="logo"> <a href="./index.html">Daisy</a></h2>
+    <h2 class="logo">
+      <a href="./index.html">Daisy</a>
+    </h2>
 
     <!-- Desktop Menu -->
-    <div class="desktop-menu" nav-right>
+    <div class="desktop-menu nav-right">
       <a href="./index.html">Home</a>
       <a href="./about.html">About</a>
       <a href="./service.html">Services</a>
@@ -433,20 +434,20 @@ footer {
       <a href="./index.html#contact">Contact</a>
       <a href="./index.html#contact" class="btn">Hire Me</a>
     </div>
-   
- 
+
     <!-- Hamburger -->
-   <button id="menuBtn" class="text-white text-2xl">
-  ☰
-</button
-<div id="mobileMenu" class="fixed inset-0 bg-[#2f3e5c] hidden flex items-center justify-center z-50">
+    <button id="menuBtn" class="menu-btn">
+      ☰
+    </button>
 
-  <!-- CLOSE BUTTON (inside) -->
-  <button id="closeMenu" class="absolute top-6 right-6 text-white text-2xl">
-    ✕
-  </button>
+  </div>
 
-  <div class="flex flex-col items-center space-y-6 text-white text-lg">
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu" style="display:none;">
+
+    <button id="closeMenu" style="position:absolute; top:20px; right:30px; font-size:24px; color:white;">
+      ✕
+    </button>
 
     <a href="./index.html">Home</a>
     <a href="./about.html">About</a>
@@ -454,13 +455,9 @@ footer {
     <a href="./portfolio.html">Portfolio</a>
     <a href="./index.html#contact">Contact</a>
 
-    <a href="./index.html#contact"
-       class="mt-5 bg-yellow-400 text-black px-6 py-3 rounded-full">
-       Hire Me
-    </a>
+    <a href="./index.html#contact" class="btn">Hire Me</a>
 
   </div>
-</div>
 
 </nav>
 
