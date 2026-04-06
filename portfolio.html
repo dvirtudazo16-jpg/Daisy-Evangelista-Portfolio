@@ -30,17 +30,44 @@ body {
 
 /* NAVBAR */
 nav {
-  background: var(--navy);
-  color: white;
+   background: #2f3b5b;
+  padding: 18px 8%;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* 🔥 THIS FIXES ALIGNMENT */
-  padding: 20px 8%;
+  align-items: center;
+}
+  .logo {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+ /* Desktop menu */
+.desktop-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
+.desktop-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+  .desktop-menu .active {
+  color: #d4a64a;
+}
+  .btn {
+  background: #f4c542;
+  padding: 8px 18px;
+  border-radius: 20px;
+  color: black;
+  font-weight: 500;
+}
 nav h2 {
   font-family: 'Playfair Display', serif;
    margin: 0;
+   font-size: 20px;
+  font-weight: 600;
 }
 
 nav ul {
@@ -286,23 +313,11 @@ footer {
 .prev { left: 30px; }
 .next { right: 30px; }
 
-  /* Desktop menu */
-.desktop-menu {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.desktop-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
 
   /* HAMBURGER */
   .menu-btn {
   display: none;
-  font-size: 26px;
+  font-size: 24px;
   color: white;
   background: none;
   border: none;
@@ -383,47 +398,28 @@ footer {
 <body>
 
 <!-- NAV -->
-<nav style="background:#1e2b45; padding:20px 8%; position:relative;">
+<nav class="nav">
 
   <!-- Top Bar -->
   <div style="display:flex; justify-content:space-between; align-items:center;">
 
     <!-- Logo -->
-    <h2 style="color:white; font-family:'Playfair Display', serif;">
-      Daisy
-    </h2>
+     <h2 class="logo"> <a href="./index.html">Daisy</a></h2>
 
     <!-- Desktop Menu -->
     <div class="desktop-menu">
-      <a href="./index.html" class="hover:text-[#C8A97E]>Home</a>
-      <a href="./about.html" class="hover:text-[#C8A97E]>About</a>
-      <a href="./service.html" class="hover:text-[#C8A97E]>Services</a>
-      <a href="./portfolio.html" class="hover:text-[#C8A97E]>Portfolio</a>
-      <a href="./index.html#contact" class="text-[#C8A97E]>Contact</a>
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./service.html">Services</a>
+      <a href="./portfolio.html" class="active">Portfolio</a>
+      <a href="./index.html#contact">Contact</a>
       <a href="./index.html#contact" class="btn">Hire Me</a>
     </div>
-
+   
+ 
     <!-- Hamburger -->
-    <button onclick="toggleMenu()" style="font-size:26px; color:white; background:none; border:none;">
-      ☰
-    </button>
-
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" style="
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    background:#2f3b5b;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    z-index:999;
-  ">
+  <div class="mobile-menu">
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
     <a href="./index.html" style="color:white; margin:15px 0;">Home</a>
     <a href="./about.html" style="color:white; margin:15px 0;">About</a>
@@ -443,6 +439,7 @@ footer {
     </a>
 
   </div>
+      </div>
 
 </nav>
 
